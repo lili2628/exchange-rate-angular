@@ -6,19 +6,17 @@
 
   <div>
     <div class="form-group">
-      <label for="amount">Amount</label>
-      <input name="from" type="number" step="any" class="form-control" id="amount" ng-model="currencyObject.amount">
+      <label for="amountFrom">Amount</label>
+      <input name="from" type="number"  min="1" class="form-control" id="amountFrom" (change)="onKeyFrom($event)" [value]="displayExchangeFrom">
     </div>
       <select
+        aria-label="Currency"
         name="from"
         id="from"
-        ng-model=""
-        ng-change=""
-        required>
-        <option>None</option>
-        <option value=""> </option>
-        <option value=""> </option>
-        <option value=""> </option>
+        required
+        (change)="selectCurrencyFrom($event)">
+        <option></option>
+        <option *ngFor="let type of selectTypes" [value]="type.value"> {{type.display}} </option>
       </select>
   </div>
 
@@ -28,19 +26,17 @@
 
   <div>
     <div class="form-group">
-      <label for="amount">Amount</label>
-      <input name="to" type="number" step="any" class="form-control" id="amount" ng-model="currencyObject.amount">
+      <label for="amountTo">Amount</label>
+      <input name="to" type="number" min="1" class="form-control" id="amountTo" (change)="onKeyTo($event)" [value]="displayExchangeTo">
     </div>
     <select
+      aria-label="Currency"
       name="to"
       id="to"
-      ng-model=""
-      ng-change=""
-      required>
-      <option>None</option>
-      <option value=""> </option>
-      <option value=""> </option>
-      <option value=""> </option>
+      required
+      (change)="selectCurrencyTo($event)">
+      <option></option>
+      <option *ngFor="let type of selectTypes" [value]="type.value"> {{type.display}} </option>
     </select>
   </div>
 
