@@ -5,12 +5,20 @@
   </div>
 
   <div>
-      <input type="number" placeholder="Amount" min="1">
-      <select name="currencyFrom" id="currencyFrom" required>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input name="from" type="number" step="any" class="form-control" id="amount" ng-model="currencyObject.amount">
+    </div>
+      <select
+        name="from"
+        id="from"
+        ng-model=""
+        ng-change=""
+        required>
         <option>None</option>
-        <option value="valueUSD">USD </option>
-        <option value="valueEUR"> EUR</option>
-        <option value="valueUAH"> UAH</option>
+        <option value=""> </option>
+        <option value=""> </option>
+        <option value=""> </option>
       </select>
   </div>
 
@@ -19,12 +27,20 @@
   </div>
 
   <div>
-    <input type="number" placeholder="Amount" min="1">
-    <select name="currencyTo" id="currencyTo" required>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input name="to" type="number" step="any" class="form-control" id="amount" ng-model="currencyObject.amount">
+    </div>
+    <select
+      name="to"
+      id="to"
+      ng-model=""
+      ng-change=""
+      required>
       <option>None</option>
-      <option value="valueUSD">USD </option>
-      <option value="valueEUR"> EUR</option>
-      <option value="valueUAH"> UAH</option>
+      <option value=""> </option>
+      <option value=""> </option>
+      <option value=""> </option>
     </select>
   </div>
 
