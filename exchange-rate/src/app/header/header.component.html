@@ -1,8 +1,8 @@
 <header class="app-bar">
   <p class="rait-container">
-    EUR  <span class="rate"></span>
+    EUR  <span class="rate">{{response.data['EUR']?.value}}</span>
   </p>
   <p class="rait-container">
-    USD   <span class="rate"></span>
+    USD   <span class="rate">{{response.data['USD']?.value}}</span>
   </p>
 </header>
