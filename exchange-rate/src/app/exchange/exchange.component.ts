@@ -30,7 +30,6 @@ export class ExchangeComponent  {
 
   onKeyFrom(event: any) {
     this.numberLeft = event.target.value;
-    console.log("number left",this.numberLeft);
     this.lastChoice = 'left';
 
     if (this.currencyLeft !== '' && this.currencyRight !== '') {
@@ -40,7 +39,6 @@ export class ExchangeComponent  {
 
   onKeyTo(event: any) {
     this.numberRight = event.target.value;
-    console.log("number right",this.numberRight);
     this.lastChoice = 'right';
 
     if (this.currencyLeft !== '' && this.currencyRight !== '') {
@@ -50,7 +48,6 @@ export class ExchangeComponent  {
 
   selectCurrencyFrom(event: any){
     this.currencyLeft = event.target.value;
-    console.log('value is From', event.target.value);
 
     if (this.currencyLeft !== '' && this.currencyRight !== '') {
       switch (this.lastChoice) {
@@ -68,7 +65,6 @@ export class ExchangeComponent  {
 
   selectCurrencyTo(event: any){
     this.currencyRight = event.target.value;
-    console.log('value is To', event.target.value);
      
     if (this.currencyLeft !== '' && this.currencyRight !== '') {
       switch (this.lastChoice) {
@@ -86,16 +82,12 @@ export class ExchangeComponent  {
 
   currencyExchangeLeft() {
     const nLeft: number = Number(this.numberLeft);
-    console.log("nLeft",nLeft);
-    this.displayExchangeTo = this.currencyExchange(nLeft, this.currencyLeft, this.currencyRight);
-    console.log('finish display to', this.displayExchangeTo);
+    this.displayExchangeTo = this.currencyExchange(nLeft, this.currencyLeft, this.currencyRight)
   }
 
   currencyExchangeRight() {
     const nRight: number = Number(this.numberRight);
-    console.log("nRight",nRight);
     this.displayExchangeFrom = this.currencyExchange(nRight, this.currencyRight, this.currencyLeft);
-    console.log('finish display from', this.displayExchangeFrom);
   }
 
 
@@ -106,20 +98,13 @@ export class ExchangeComponent  {
 
     if (currencyFrom === currencyTo) {
       displayExchange = n;
-      console.log('=');
     } else if (currencyFrom === 'UAH') {
         switch (currencyTo) {
           case 'USD':
             displayExchange = rateUSD * n;
-            console.log("display",displayExchange);
-            console.log(this.lastChoice);
-            console.log('UAH USD');
             break;
           case 'EUR':
             displayExchange = rateEUR * n;
-            console.log("display",displayExchange);
-            console.log(this.lastChoice);
-            console.log('UAH EUR');
             break;
           default:
             console.log();
@@ -128,15 +113,9 @@ export class ExchangeComponent  {
         switch (currencyTo) {
           case 'UAH':
             displayExchange = n / rateEUR;
-            console.log("display",displayExchange);
-            console.log(this.lastChoice);
-            console.log('EUR UAH');
             break;
           case 'USD':
             displayExchange = (rateUSD * n ) / rateEUR;
-            console.log("display",displayExchange);
-            console.log(this.lastChoice);
-            console.log('EUR USD');
             break;
           default:
             console.log();
@@ -145,15 +124,9 @@ export class ExchangeComponent  {
         switch (currencyTo) {
           case 'UAH':
             displayExchange = n / rateUSD;
-            console.log("display",displayExchange);
-            console.log(this.lastChoice);
-            console.log('USD UAH');
             break;
           case 'EUR':
             displayExchange = (rateEUR * n ) / rateUSD;
-            console.log("display",displayExchange);
-            console.log(this.lastChoice);
-            console.log('USD EUR');
             break;
           default:
             console.log();
