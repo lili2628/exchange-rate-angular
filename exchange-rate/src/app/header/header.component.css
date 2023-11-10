@@ -4,11 +4,31 @@
   left: 0;
   right: 0;
   height: 60px;
-  display: flex;
   align-items: center;
   background-color: #1976d2;
   color: white;
   font-weight: 600;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.list{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #d7dafa;
+}
+
+.list__item{
+  width: 180px;
+}
+
+.list__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.list__rate{
+  margin-right: 20px;
 }

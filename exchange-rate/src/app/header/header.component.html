@@ -1,8 +1,10 @@
 <header class="app-bar">
-  <p class="rait-container">
-    EUR  <span class="rate">{{response.data['EUR']?.value}}</span>
-  </p>
-  <p class="rait-container">
-    USD   <span class="rate">{{response.data['USD']?.value}}</span>
-  </p>
+  <ul class="list">
+    <li class="list__item">
+      EUR  <span class="list__rate">{{response.data['EUR']?.value}}</span>
+    </li>
+    <li class="list__item">
+      USD   <span class="list__rate">{{response.data['USD']?.value}}</span>
+    </li>
+  </ul> 
 </header>

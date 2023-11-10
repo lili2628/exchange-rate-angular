@@ -1,15 +1,13 @@
 <section class="content" role="main">
 
-  <div>
-    <span> From </span>
-  </div>
-
-  <div>
-    <div class="form-group">
+  <div class="input-group">
+    <div class="input-group__input-label">
       <label for="amountFrom">Amount</label>
-      <input name="from" type="number"  min="1" class="form-control" id="amountFrom" (change)="onKeyFrom($event)" [value]="displayExchangeFrom">
+      <input name="from" type="number"  min="1" class="input-group__input" id="amountFrom" (change)="onKeyFrom($event)" [value]="displayExchangeFrom">
     </div>
+
       <select
+        class="input-group__select"
         aria-label="Currency"
         name="from"
         id="from"
@@ -20,16 +18,18 @@
       </select>
   </div>
 
-  <div>
-    <span> to </span>
+  <div class="arrow-box">
+    <img src='../../assets/arrow.png' alt='arrow' class="arrow" />
   </div>
 
-  <div>
-    <div class="form-group">
+  <div class="input-group">
+    <div class="input-group__input-label">
       <label for="amountTo">Amount</label>
-      <input name="to" type="number" min="1" class="form-control" id="amountTo" (change)="onKeyTo($event)" [value]="displayExchangeTo">
+      <input name="to" type="number" min="1" class="input-group__input" id="amountTo" (change)="onKeyTo($event)" [value]="displayExchangeTo">
     </div>
+
     <select
+    class="input-group__select"
       aria-label="Currency"
       name="to"
       id="to"
